@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "DeafAlsoPlayFps": {
+      "commandName": "Project",
+      "commandLineArgs": "--gameid=1559"
+      
+    }
+  }
+}

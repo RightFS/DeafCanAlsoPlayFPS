@@ -1,0 +1,31 @@
+﻿<UserControl
+    x:Class="OctopusControls.BubbleTooltip"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:OctopusControls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    d:Height="20"
+    d:Width="30"
+    mc:Ignorable="d">
+    <Grid x:Name="RootGrid">
+
+        <!--  唯一的气泡Path，动态生成所有方向  -->
+        <Path
+            x:Name="BubblePath"
+            Fill="{Binding BubbleBackground, RelativeSource={RelativeSource AncestorType=local:BubbleTooltip}}"
+            Stroke="{Binding BubbleBorderBrush, RelativeSource={RelativeSource AncestorType=local:BubbleTooltip}}"
+            StrokeThickness="{Binding TailStrokeThickness, RelativeSource={RelativeSource AncestorType=local:BubbleTooltip}}" />
+
+        <!--  内容区域  -->
+        <ContentPresenter
+            Margin="{Binding BubblePadding, RelativeSource={RelativeSource AncestorType=local:BubbleTooltip}}"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="{Binding Content, RelativeSource={RelativeSource AncestorType=local:BubbleTooltip}}"
+            ContentTemplate="{Binding ContentTemplate, RelativeSource={RelativeSource AncestorType=local:BubbleTooltip}}" />
+
+    </Grid>
+</UserControl>

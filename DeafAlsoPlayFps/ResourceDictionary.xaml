@@ -1,0 +1,88 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:OctopusControls="clr-namespace:OctopusControls;assembly=OctopusControls">
+
+    <Style x:Key="PrimaryActionButtonStyle" TargetType="OctopusControls:StyledButton">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Width" Value="320" />
+        <Setter Property="Height" Value="60" />
+        <Setter Property="FontFamily" Value="MiSans VF" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="NormalBackground" Value="#E5FFFFFF" />
+        <Setter Property="HoverBackground" Value="#CCFFFFFF" />
+        <Setter Property="PressedBackground" Value="#CCFFFFFF" />
+        <Setter Property="NormalForeground" Value="#141414" />
+        <Setter Property="HoverForeground" Value="#141414" />
+        <Setter Property="PressedForeground" Value="#141414" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="NormalBorderBrush" Value="#33FFFFFF" />
+        <Setter Property="HoverBorderBrush" Value="#66FFFFFF" />
+    </Style>
+    <Style x:Key="OutlinedButtonStyle" TargetType="OctopusControls:StyledButton">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Width" Value="320" />
+        <Setter Property="Height" Value="60" />
+        <Setter Property="FontFamily" Value="MiSans VF" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="NormalBackground" Value="Transparent" />
+        <Setter Property="HoverBackground" Value="Transparent" />
+        <Setter Property="PressedBackground" Value="Transparent" />
+        <Setter Property="NormalForeground" Value="#E5FFFFFF" />
+        <Setter Property="HoverForeground" Value="#E5FFFFFF" />
+        <Setter Property="PressedForeground" Value="#E5FFFFFF" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="NormalBorderBrush" Value="#E5FFFFFF" />
+        <Setter Property="HoverBorderBrush" Value="#CCFFFFFF" />
+    </Style>
+    <Style x:Key="TextButtonStyle" TargetType="OctopusControls:StyledButton">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Width" Value="320" />
+        <Setter Property="Height" Value="60" />
+        <Setter Property="FontFamily" Value="MiSans VF" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="NormalBackground" Value="Transparent" />
+        <Setter Property="HoverBackground" Value="Transparent" />
+        <Setter Property="PressedBackground" Value="Transparent" />
+        <Setter Property="NormalForeground" Value="#E5FFFFFF" />
+        <Setter Property="HoverForeground" Value="#CCFFFFFF" />
+        <Setter Property="PressedForeground" Value="#CCFFFFFF" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="CornerRadius" Value="2" />
+        <Setter Property="NormalBorderBrush" Value="#E5FFFFFF" />
+        <Setter Property="HoverBorderBrush" Value="#66FFFFFF" />
+    </Style>
+    <Style x:Key="SvgButtonStyle" TargetType="Button">
+        <Setter Property="Width" Value="40" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Image
+                            x:Name="BtnImage"
+                            Opacity="0.7"
+                            Source="{TemplateBinding Tag}"
+                            Stretch="Uniform" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="BtnImage" Property="Opacity" Value="0.8" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

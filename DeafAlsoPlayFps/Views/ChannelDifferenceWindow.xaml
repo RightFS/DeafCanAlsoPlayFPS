@@ -1,0 +1,148 @@
+﻿<Window
+    x:Class="DeafAlsoPlayFps.Views.ChannelDifferenceWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="声道差值显示"
+    Width="400"
+    Height="80"
+    AllowsTransparency="True"
+    Background="Transparent"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    Topmost="True"
+    WindowStartupLocation="Manual"
+    WindowStyle="None">
+
+    <Grid>
+        <!--  主容器  -->
+        <Border
+            x:Name="MainContainer"
+            Width="380"
+            Height="60"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="#20000000"
+            BorderBrush="#40FFFFFF"
+            BorderThickness="1"
+            CornerRadius="30">
+
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!--  标题  -->
+                <TextBlock
+                    Grid.Row="0"
+                    Margin="0,2,0,4"
+                    HorizontalAlignment="Center"
+                    FontSize="10"
+                    Foreground="White"
+                    Text="声道平衡" />
+
+                <!--  差值显示区域  -->
+                <Grid Grid.Row="1">
+                    <!--  背景轨道  -->
+                    <Border
+                        Height="20"
+                        Background="#33FFFFFF"
+                        CornerRadius="10" />
+
+                    <!--  中心线  -->
+                    <Rectangle
+                        Width="1"
+                        Height="20"
+                        HorizontalAlignment="Center"
+                        Fill="#AAFFFFFF" />
+
+                    <!--  差值指示器  -->
+                    <Canvas x:Name="DifferenceCanvas">
+                        <!--  左侧区域 (负差值)  -->
+                        <!--  左侧区域 (负差值)  -->
+                        <Rectangle
+                            x:Name="LeftDifferenceBar"
+                            Canvas.Left="{Binding LeftBarPosition}"
+                            Canvas.Top="2"
+                            Width="{Binding LeftBarWidth}"
+                            Height="16"
+                            Fill="#FF4444"
+                            RadiusX="8"
+                            RadiusY="8" />
+
+                        <!--  右侧区域 (正差值)  -->
+                        <Rectangle
+                            x:Name="RightDifferenceBar"
+                            Canvas.Left="179"
+                            Canvas.Top="2"
+                            Width="{Binding RightBarWidth}"
+                            Height="16"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Fill="#44FF44"
+                            RadiusX="8"
+                            RadiusY="8" />
+
+                        <!--  中心点  -->
+                        <Ellipse
+                            x:Name="CenterPoint"
+                            Canvas.Left="176"
+                            Canvas.Top="7"
+                            Width="6"
+                            Height="6"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Fill="White"
+                            Visibility="Collapsed" />
+                    </Canvas>
+
+                    <!--  刻度标记  -->
+                    <Canvas>
+                        <!--  左侧刻度  -->
+                        <Rectangle
+                            Canvas.Left="95"
+                            Canvas.Top="6"
+                            Width="1"
+                            Height="8"
+                            Fill="#66FFFFFF" />
+                        <Rectangle
+                            Canvas.Left="47"
+                            Canvas.Top="6"
+                            Width="1"
+                            Height="8"
+                            Fill="#66FFFFFF" />
+
+                        <!--  右侧刻度  -->
+                        <Rectangle
+                            Canvas.Left="285"
+                            Canvas.Top="6"
+                            Width="1"
+                            Height="8"
+                            Fill="#66FFFFFF" />
+                        <Rectangle
+                            Canvas.Left="333"
+                            Canvas.Top="6"
+                            Width="1"
+                            Height="8"
+                            Fill="#66FFFFFF" />
+                    </Canvas>
+
+                    <!--  标签  -->
+                    <Grid Margin="5,0" VerticalAlignment="Center">
+                        <TextBlock
+                            HorizontalAlignment="Left"
+                            FontSize="8"
+                            Foreground="#FF4444"
+                            Text="L" />
+                        <TextBlock
+                            HorizontalAlignment="Right"
+                            FontSize="8"
+                            Foreground="#44FF44"
+                            Text="R" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
+
