@@ -17,3 +17,8 @@ Bridges the accessibility gap in gaming by translating essential audio informati
 ### Screenshots:
 
 ![main](screenshots/main.png)
+
+
+### Need Help
+
+We need a free icon or logo
